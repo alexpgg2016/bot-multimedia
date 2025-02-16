@@ -1,14 +1,14 @@
-# Usa una imagen base de Python
+# Usa una imagen de Python
 FROM python:3.9
 
-# Establece el directorio de trabajo
+# Establece el directorio de trabajo en /app
 WORKDIR /app
 
-# Copia los archivos del repositorio al contenedor
-COPY . /app
+# Copia los archivos del repositorio a /app
+COPY . /app/
 
-# Instala las dependencias del bot
-RUN pip install -r requirements.txt
+# Instala las dependencias
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Comando para ejecutar el bot
+# Ejecuta el bot
 CMD ["python", "Bot.py"]
